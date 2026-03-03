@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Fees & Payments</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/fees.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><span class="logo-icon">📖</span><h2>EduFlow</h2></div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="index.html" class="nav-link"><span>🏠</span> Dashboard</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    <a href="grades.html" class="nav-link"><span>🎓</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link"><span>📝</span> Attendance</a>
+                    <a href="schedule.html" class="nav-link"><span>📅</span> Schedule</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="fees.html" class="nav-link active"><span>💳</span> Fees & Payments</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search transactions...">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="page-header">
+                    <div class="header-text">
+                        <h1>Fees & Payments</h1>
+                        <p class="text-muted">Academic Year 2025/2026 — Fee management</p>
+                    </div>
+                    <button class="download-btn">📥 Download Statement</button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">TOTAL FEES</p>
+                            <h2 class="stat-value">₦188,000</h2>
+                            <p class="stat-sub">Full academic year</p>
+                        </div>
+                        <div class="stat-icon-outline">💳</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">AMOUNT PAID</p>
+                            <h2 class="stat-value">₦143,000</h2>
+                            <p class="stat-sub positive">76% of total fees</p>
+                        </div>
+                        <div class="stat-icon-circle green">✅</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">OUTSTANDING</p>
+                            <h2 class="stat-value">₦45,000</h2>
+                            <p class="stat-sub danger">Balance remaining</p>
+                        </div>
+                        <div class="stat-icon-circle red">❗</div>
+                    </div>
+                </div>
+
+                <div class="payment-layout">
+                    <div class="payment-overview">
+                        <h3>Payment Overview</h3>
+                        <p class="text-muted">Paid vs outstanding balance</p>
+                        <div class="chart-box">
+                            <div class="donut-chart">
+                                <div class="donut-center">
+                                    <span class="percent">76%</span>
+                                    <span class="label">Paid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item"><span class="dot paid"></span> Paid</div>
+                            <div class="legend-item"><span class="dot outstanding"></span> Outstanding</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-payment">
+                        <h3>Quick Payment</h3>
+                        <div class="payment-grid">
+                            <div class="pay-card">
+                                <div class="pay-info">
+                                    <h4>Laboratory Fee</h4>
+                                    <p>Due: Mar 15, 2026</p>
+                                    <h3 class="price">₦10,000</h3>
+                                </div>
+                                <button class="pay-now-btn">Pay Now ↗</button>
+                            </div>
+                            <div class="pay-card">
+                                <div class="pay-info">
+                                    <h4>Sports Fee</h4>
+                                    <p>Due: Mar 10, 2026</p>
+                                    <h3 class="price danger-text">₦5,000</h3>
+                                </div>
+                                <button class="pay-now-btn">Pay Now ↗</button>
+                            </div>
+                            <div class="pay-card">
+                                <div class="pay-info">
+                                    <h4>Development Fee</h4>
+                                    <p>Due: Apr 1, 2026</p>
+                                    <h3 class="price">₦30,000</h3>
+                                </div>
+                                <button class="pay-now-btn">Pay Now ↗</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-history-card">
+                    <h3 class="payment-history-title">Payment History</h3>
+                    <ul class="payment-history-list">
+                        <li class="payment-history-item">
+                            <span class="payment-status-icon" aria-hidden="true">✓</span>
+                            <div class="payment-details">
+                                <span class="payment-fee-name">Tuition Fee - Term 4</span>
+                                <p class="payment-meta">Jan 10, 2026 · Bank Transfer · Ref: REF-8742</p>
+                            </div>
+                            <div class="payment-amount-block">
+                                <span class="payment-amount">+₦120,000</span>
+                                <p class="payment-txn">TXN-001</p>
+                            </div>
+                        </li>
+                        <li class="payment-history-item">
+                            <span class="payment-status-icon" aria-hidden="true">✓</span>
+                            <div class="payment-details">
+                                <span class="payment-fee-name">Exam Fee - Term 4</span>
+                                <p class="payment-meta">Feb 1, 2026 · Online Payment · Ref: REF-3391</p>
+                            </div>
+                            <div class="payment-amount-block">
+                                <span class="payment-amount">+₦15,000</span>
+                                <p class="payment-txn">TXN-002</p>
+                            </div>
+                        </li>
+                        <li class="payment-history-item">
+                            <span class="payment-status-icon" aria-hidden="true">✓</span>
+                            <div class="payment-details">
+                                <span class="payment-fee-name">Library Fee - Annual</span>
+                                <p class="payment-meta">Sep 1, 2025 · Cash · Ref: REF-1102</p>
+                            </div>
+                            <div class="payment-amount-block">
+                                <span class="payment-amount">+₦5,000</span>
+                                <p class="payment-txn">TXN-003</p>
+                            </div>
+                        </li>
+                        <li class="payment-history-item">
+                            <span class="payment-status-icon" aria-hidden="true">✓</span>
+                            <div class="payment-details">
+                                <span class="payment-fee-name">Sports Fee - Partial</span>
+                                <p class="payment-meta">Feb 20, 2026 · Online Payment · Ref: REF-6618</p>
+                            </div>
+                            <div class="payment-amount-block">
+                                <span class="payment-amount">+₦3,000</span>
+                                <p class="payment-txn">TXN-004</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="payment-history-help" aria-label="Help">?</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

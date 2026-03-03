@@ -1,0 +1,79 @@
+/* css/schedule.css */
+.today-banner {
+    background: linear-gradient(135deg, #6366F1, #4F46E5);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.banner-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.banner-label { font-size: 12px; opacity: 0.8; font-weight: 700; }
+.banner-day { font-size: 32px; }
+.banner-count { text-align: right; }
+
+.today-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.class-card-mini {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.class-card-mini:hover { background: rgba(255, 255, 255, 0.25); }
+
+.mini-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.mini-info h4 { font-size: 15px; margin-bottom: 4px; }
+.mini-info p { font-size: 12px; opacity: 0.8; }
+.mini-arrow { margin-left: auto; opacity: 0.5; font-size: 20px; }
+
+/* Weekly View Styling */
+.weekly-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.day-title { margin-bottom: 20px; font-size: 18px; }
+
+.schedule-item {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 15px;
+}
+
+.schedule-item.purple { background: #EEF2FF; border-left: 4px solid #6366F1; }
+.schedule-item.green { background: #F0FDF4; border-left: 4px solid #22C55E; }
+
+.subject { font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+.time, .room { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+    .today-banner { padding: 20px; margin-bottom: 24px; }
+    .banner-day { font-size: 24px; }
+    .today-grid { grid-template-columns: 1fr; gap: 12px; }
+    .weekly-view { grid-template-columns: 1fr; gap: 16px; }
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Profile</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📖</span>
+                    <h2>EduFlow</h2>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Alex Morgan" class="user-avatar">
+                <div class="user-meta">
+                    <h4>Alex Morgan</h4>
+                    <p>Grade 12 • Science</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    <a href="grades.html" class="nav-link"><span>🎓</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link"><span>📝</span> Attendance</a>
+                    <a href="schedule.html" class="nav-link"><span>📅</span> Schedule</a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="fees.html" class="nav-link"><span>💳</span> Fees & Payments</a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-title">MANAGEMENT</p>
+                    <a href="profile.html" class="nav-link active"><span>👤</span> Profile</a>
+                    <a href="settings.html" class="nav-link"><span>⚙️</span> Settings</a>
+                </div>
+            </nav>
+
+            <a href="login.html" class="sign-out"><span>🚪</span> Sign Out</a>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header profile-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search students, subjects...">
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="notif-btn" aria-label="Notifications">🔔<span class="dot"></span></button>
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Profile" class="header-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="page-head">
+                    <h1>My Profile</h1>
+                    <p class="text-muted">Personal information and academic record</p>
+                </div>
+
+                <div class="profile-grid">
+                    <section class="profile-card">
+                        <div class="profile-cover"></div>
+                        <div class="profile-main">
+                            <div class="profile-avatar-wrap">
+                                <img class="profile-avatar" src="https://i.pravatar.cc/200?img=12" alt="Alex Morgan">
+                                <button type="button" class="avatar-edit-btn" aria-label="Edit photo">✎</button>
+                                <input id="profile-photo-input" class="profile-photo-input" type="file" accept="image/*">
+                            </div>
+                            <p class="photo-hint text-muted" id="photo-status">Click your photo or the pencil to change it.</p>
+
+                            <div class="profile-identity">
+                                <h2>Alex Morgan</h2>
+                                <p class="text-muted">Grade 12 • Science Stream</p>
+                            </div>
+
+                            <div class="profile-badges">
+                                <span class="chip chip-id">STD-2024-001</span>
+                                <span class="chip chip-active">Active</span>
+                            </div>
+
+                            <div class="mini-stats">
+                                <div class="mini-stat">
+                                    <div class="mini-icon mini-purple">📈</div>
+                                    <div>
+                                        <div class="mini-value">3.85</div>
+                                        <div class="mini-label">GPA</div>
+                                    </div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="mini-icon mini-green">🗓️</div>
+                                    <div>
+                                        <div class="mini-value">94%</div>
+                                        <div class="mini-label">Attendance</div>
+                                    </div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="mini-icon mini-amber">🏅</div>
+                                    <div>
+                                        <div class="mini-value">#3</div>
+                                        <div class="mini-label">Rank</div>
+                                    </div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="mini-icon mini-lilac">🎓</div>
+                                    <div>
+                                        <div class="mini-value">21/24</div>
+                                        <div class="mini-label">Credits</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="info-card">
+                        <div class="info-card-head">
+                            <h3>Personal Information</h3>
+                            <button type="button" class="link-btn">✎ <span>Edit</span></button>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-ico">🪪</span>
+                                <div>
+                                    <div class="info-label text-muted">Student ID</div>
+                                    <div class="info-value">STD-2024-001</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">📅</span>
+                                <div>
+                                    <div class="info-label text-muted">Date of Birth</div>
+                                    <div class="info-value">March 14, 2008</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">👤</span>
+                                <div>
+                                    <div class="info-label text-muted">Gender</div>
+                                    <div class="info-value">Female</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">📌</span>
+                                <div>
+                                    <div class="info-label text-muted">Admission Date</div>
+                                    <div class="info-value">September 1, 2022</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">✉️</span>
+                                <div>
+                                    <div class="info-label text-muted">Email</div>
+                                    <div class="info-value">alex.m@school.edu</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">📞</span>
+                                <div>
+                                    <div class="info-label text-muted">Phone</div>
+                                    <div class="info-value">+234-801-234-5678</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">📍</span>
+                                <div>
+                                    <div class="info-label text-muted">Address</div>
+                                    <div class="info-value">12 Victoria Island, Lagos</div>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-ico">🧑‍🤝‍🧑</span>
+                                <div>
+                                    <div class="info-label text-muted">Guardian</div>
+                                    <div class="info-value">Mrs. Patricia Morgan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="panel-card">
+                    <h3 class="panel-title">Current Term Grades</h3>
+                    <div class="grade-grid">
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">Mathematics</span>
+                                <span class="grade-pill">A</span>
+                            </div>
+                            <div class="grade-score">92</div>
+                        </div>
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">Physics</span>
+                                <span class="grade-pill">A</span>
+                            </div>
+                            <div class="grade-score">88</div>
+                        </div>
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">English Lit.</span>
+                                <span class="grade-pill grade-pill-strong">A+</span>
+                            </div>
+                            <div class="grade-score">94</div>
+                        </div>
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">Chemistry</span>
+                                <span class="grade-pill grade-pill-good">B+</span>
+                            </div>
+                            <div class="grade-score">85</div>
+                        </div>
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">History</span>
+                                <span class="grade-pill grade-pill-warn">B</span>
+                            </div>
+                            <div class="grade-score">79</div>
+                        </div>
+                        <div class="grade-tile">
+                            <div class="grade-head">
+                                <span class="text-muted">Comp. Science</span>
+                                <span class="grade-pill grade-pill-strong">A+</span>
+                            </div>
+                            <div class="grade-score">97</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel-card">
+                    <h3 class="panel-title">Achievements & Awards</h3>
+                    <div class="award-grid">
+                        <div class="award-tile award-amber">
+                            <div class="award-icon">🏆</div>
+                            <div class="award-title">Top 10% — Term 3</div>
+                            <div class="award-sub text-muted">Dec 2025</div>
+                        </div>
+                        <div class="award-tile award-blue">
+                            <div class="award-icon">⭐</div>
+                            <div class="award-title">Perfect Attendance — Oct</div>
+                            <div class="award-sub text-muted">Oct 2025</div>
+                        </div>
+                        <div class="award-tile award-pink">
+                            <div class="award-icon">🧮</div>
+                            <div class="award-title">Best in Mathematics</div>
+                            <div class="award-sub text-muted">Nov 2025</div>
+                        </div>
+                        <div class="award-tile award-green">
+                            <div class="award-icon">🔬</div>
+                            <div class="award-title">Science Olympiad Finalist</div>
+                            <div class="award-sub text-muted">Sep 2025</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

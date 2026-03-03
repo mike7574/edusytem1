@@ -1,0 +1,39 @@
+/* css/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Brand Colors */
+    --primary-purple: #5A32FA;
+    --primary-light: #7B5CFA;
+    --primary-dark: #1E1B4B;
+    --accent-purple: #8B5CF6;
+    
+    /* Backgrounds */
+    --bg-main: #F8FAFC;
+    --bg-white: #FFFFFF;
+    --bg-dark-panel: #1A1C29; /* Left side of login */
+    
+    /* Text Colors */
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --text-light: #F8FAFC;
+    
+    /* UI Elements */
+    --border-color: #E2E8F0;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}

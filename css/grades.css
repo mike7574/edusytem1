@@ -1,0 +1,109 @@
+/* css/grades.css */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.term-switcher {
+    display: flex;
+    background: #EDF2F7;
+    padding: 4px;
+    border-radius: var(--radius-md);
+    gap: 4px;
+}
+
+.term-btn {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.term-btn.active {
+    background: white;
+    color: var(--primary-purple);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Table Styling */
+.results-container {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.results-container h3 {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grades-table th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.grades-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid #F1F5F9;
+    font-size: 14px;
+}
+
+.text-muted { color: var(--text-muted); }
+
+/* Score & Grade Badges */
+.score-pill {
+    background: #EEF2FF;
+    color: #4F46E5;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.grade-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.grade-badge.purple { background: #F5F3FF; color: var(--primary-purple); }
+
+/* Custom Progress Bar */
+.progress-bar-container {
+    width: 160px;
+    height: 8px;
+    background: #F1F5F9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8B5CF6, #5A32FA);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .page-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .grades-table th:nth-child(2), .grades-table td:nth-child(2) { display: none; } /* Hide teacher on mobile */
+    .progress-bar-container { width: 100px; }
+}

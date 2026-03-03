@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Marks & Grades</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/grades.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><span class="logo-icon">📖</span><h2>EduFlow</h2></div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="index.html" class="nav-link"><span>🏠</span> Dashboard</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    <a href="grades.html" class="nav-link active"><span>🎓</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link"><span>📝</span> Attendance</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search subjects...">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="page-header">
+                    <div class="header-text">
+                        <h1>Marks & Grades</h1>
+                        <p>Detailed academic performance report</p>
+                    </div>
+                    <div class="term-switcher">
+                        <button class="term-btn">Term 1</button>
+                        <button class="term-btn">Term 2</button>
+                        <button class="term-btn">Term 3</button>
+                        <button class="term-btn active">Term 4</button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">CLASS AVERAGE</p>
+                            <h2 class="stat-value">89/100</h2>
+                        </div>
+                        <div class="stat-icon purple">📈</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">HIGHEST SCORE</p>
+                            <h2 class="stat-value">97/100</h2>
+                        </div>
+                        <div class="stat-icon green">🏆</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">LOWEST SCORE</p>
+                            <h2 class="stat-value">79/100</h2>
+                        </div>
+                        <div class="stat-icon orange">📖</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">SUBJECTS</p>
+                            <h2 class="stat-value">6</h2>
+                        </div>
+                        <div class="stat-icon pink">🎓</div>
+                    </div>
+                </div>
+
+                <div class="results-container">
+                    <h3>Term 4 Results</h3>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>SUBJECT</th>
+                                <th>TEACHER</th>
+                                <th>SCORE</th>
+                                <th>GRADE</th>
+                                <th>PROGRESS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mathematics</strong></td>
+                                <td class="text-muted">Mr. Johnson</td>
+                                <td><span class="score-pill blue">92</span></td>
+                                <td><span class="grade-badge purple">A</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-fill" style="width: 92%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Physics</strong></td>
+                                <td class="text-muted">Dr. Williams</td>
+                                <td><span class="score-pill blue">88</span></td>
+                                <td><span class="grade-badge purple">A</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-fill" style="width: 88%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>English</strong></td>
+                                <td class="text-muted">Ms. Carter</td>
+                                <td><span class="score-pill blue">94</span></td>
+                                <td><span class="grade-badge purple">A</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-fill" style="width: 94%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

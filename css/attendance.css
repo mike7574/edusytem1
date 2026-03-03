@@ -1,0 +1,78 @@
+/* css/attendance.css */
+.stat-icon-outline {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: #FFF;
+}
+
+.chart-container {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.chart-header { margin-bottom: 40px; }
+
+.bar-chart {
+    display: flex;
+    height: 250px;
+    gap: 20px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.chart-y-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.chart-bars {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 30px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 40px;
+    gap: 4px;
+    position: relative;
+}
+
+.bar {
+    width: 12px;
+    border-radius: 4px;
+    transition: height 0.45s ease-out;
+}
+
+.bar.present { background: #10B981; }
+.bar.late { background: #F59E0B; }
+.bar.absent { background: #EF4444; }
+
+.bar-group label {
+    position: absolute;
+    bottom: -25px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
