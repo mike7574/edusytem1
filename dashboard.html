@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📖</span>
+                    <h2>EduFlow</h2>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Alex" class="user-avatar">
+                <div class="user-meta">
+                    <h4>Alex Morgan</h4>
+                    <p>Grade 12 • Science</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="dashboard.html" class="nav-link active"><span>🏠</span> Dashboard</a>
+                    <a href="class-dashboard.html" class="nav-link"><span>📊</span> Class Dashboard</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    <a href="grades.html" class="nav-link"><span>🎓</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link"><span>📝</span> Attendance</a>
+                    <a href="schedule.html" class="nav-link"><span>📅</span> Schedule</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="fees.html" class="nav-link"><span>💳</span> Fees & Payments</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">MANAGEMENT</p>
+                    <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+                    <a href="settings.html" class="nav-link"><span>⚙️</span> Settings</a>
+                </div>
+            </nav>
+
+            <a href="index.html" class="sign-out"><span>🚪</span> Sign Out</a>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search students, subjects...">
+                </div>
+                <div class="header-actions">
+                    <button class="notif-btn">🔔<span class="dot"></span></button>
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Profile" class="header-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>Good morning, Alex! ☀️</h1>
+                        <p>Tuesday, March 3, 2026</p>
+                    </div>
+                    <div class="term-badge">Term 4 • 2025/2026</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">CURRENT GPA</p>
+                            <h2 class="stat-value">3.85</h2>
+                            <p class="stat-sub positive">Top 8% of class</p>
+                        </div>
+                        <div class="stat-icon purple">📈</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">ATTENDANCE</p>
+                            <h2 class="stat-value">94%</h2>
+                            <p class="stat-sub positive">+2% this term</p>
+                        </div>
+                        <div class="stat-icon green">🕒</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">PENDING FEES</p>
+                            <h2 class="stat-value">₦45,000</h2>
+                            <p class="stat-sub warning">Due Mar 15, 2026</p>
+                        </div>
+                        <div class="stat-icon orange">💳</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">ASSIGNMENTS</p>
+                            <h2 class="stat-value">7 Due</h2>
+                            <p class="stat-sub danger">2 due this week</p>
+                        </div>
+                        <div class="stat-icon pink">📖</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">QUICK ACCESS</h3>
+                <div class="quick-access-grid">
+                    <a href="class-dashboard.html" class="quick-card">
+                        <div class="q-icon q-purple">🎓</div>
+                        <h4>Class Dashboard</h4>
+                         <p style="color: rgb(101, 101, 179); font-size: 15px;">Marks, grades & fees overview</p>
+                            
+                        <span class="arrow" style="color: #6f00ff;">→</span>
+                    </a>
+                    <a href="grades.html" class="quick-card">
+                        <div class="q-icon q-blue">⭐</div>
+                        <h4>View Marks</h4>
+                        <p style="color: #6f00ff;size: 15px;">Detailed subject performance</p>
+                        <span class="arrow" style="color: #6f00ff;">→</span>
+                    </a>
+                    <a href="fees.html" class="quick-card">
+                        <div class="q-icon q-orange">💳</div>
+                        <h4>Check Fees</h4>
+                        <p style="color: #6f00ff; font-size: 15px;">Payment history & balance</p>
+                        <span class="arrow" style="color: #6f00ff;">→</span>
+                    </a>
+                    <a href="attendance.html" class="quick-card">
+                        <div class="q-icon q-green">📅</div>
+                        <h4>Attendance</h4>
+                        <p style="color: #6f00ff; font-size: 15px;">Present / absent records</p>
+                        <span class="arrow" style="color: #6f00ff;">→</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
