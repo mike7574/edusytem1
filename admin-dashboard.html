@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">ED</span>
+                    <h2>EduFlow</h2>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=33" alt="Admin" class="user-avatar">
+                <div class="user-meta">
+                    <h4>School Administrator</h4>
+                    <p>System Admin</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="admin-dashboard.html" class="nav-link active"><span>DB</span> Dashboard</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">MANAGEMENT</p>
+                    <a href="#students-card" class="nav-link"><span>ST</span> Students</a>
+                    <a href="#teachers-card" class="nav-link"><span>TC</span> Teachers</a>
+                    <a href="#reports-card" class="nav-link"><span>RP</span> Reports</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="#finance-card" class="nav-link"><span>FN</span> Collections</a>
+                    <a href="#history-card" class="nav-link"><span>PH</span> Payment History</a>
+                </div>
+            </nav>
+
+            <a href="index.html" class="sign-out"><span>OUT</span> Sign Out</a>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">Menu</button>
+                <div class="search-bar">
+                    <span class="search-icon">Search</span>
+                    <input type="text" id="admin-search" placeholder="Search students, teachers, payments...">
+                </div>
+                <div class="header-actions">
+                    <img src="https://i.pravatar.cc/100?img=33" alt="Profile" class="header-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="admin-page-header">
+                    <div>
+                        <h1>Admin Dashboard</h1>
+                        <p class="text-muted">Manage students, teachers, finance, and downloadable reports</p>
+                    </div>
+                    <button class="add-new-btn" id="open-quick-add">Quick Add</button>
+                </div>
+
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card">
+                        <div class="stat-content">
+                            <p class="stat-label">TOTAL STUDENTS</p>
+                            <h2 class="stat-value" id="total-students-stat">0</h2>
+                            <p class="stat-meta">Registered in system</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="stat-content">
+                            <p class="stat-label">TOTAL TEACHERS</p>
+                            <h2 class="stat-value" id="total-teachers-stat">0</h2>
+                            <p class="stat-meta">Active staff</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="stat-content">
+                            <p class="stat-label">REVENUE THIS MONTH</p>
+                            <h2 class="stat-value" id="revenue-this-month-stat">KSh 0</h2>
+                            <p class="stat-meta">Completed payments only</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-tools-row">
+                    <button class="add-new-btn" id="open-add-student">Add Student</button>
+                    <button class="add-new-btn" id="open-add-teacher">Add Teacher</button>
+                    <button class="add-new-btn" id="open-add-payment">Add Payment</button>
+                    <button class="add-new-btn" id="open-grade-fee">Set Grade Fee</button>
+                </div>
+
+                <div class="admin-alerts-section" id="approvals-card">
+                    <div class="alerts-card">
+                        <div class="alerts-header">
+                            <h3>Pending Account Approvals</h3>
+                            <span class="alert-count" id="pending-requests-count">0</span>
+                        </div>
+                        <div class="history-table-wrap">
+                            <table class="management-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Reg No.</th>
+                                        <th>Requested On</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="approval-requests-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-management-section">
+                    <div class="management-card" id="students-card">
+                        <div class="management-header">
+                            <h3>Students</h3>
+                            <a href="#" class="view-all-link" id="students-view-all">View All</a>
+                        </div>
+                        <table class="management-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Grade</th>
+                                    <th>Subjects</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-table-body"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="management-card" id="teachers-card">
+                        <div class="management-header">
+                            <h3>Teachers</h3>
+                            <a href="#" class="view-all-link" id="teachers-view-all">View All</a>
+                        </div>
+                        <table class="management-table">
+                            <thead>
+                                <tr>
+                                    <th>Teacher ID</th>
+                                    <th>Name</th>
+                                    <th>Subjects Teaching</th>
+                                    <th>Classes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teachers-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-alerts-section" id="finance-card">
+                    <div class="alerts-card">
+                        <div class="alerts-header">
+                            <h3>Finance Overview</h3>
+                            <span class="alert-count" id="finance-total-paid">KSh 0</span>
+                        </div>
+                        <div class="finance-grid">
+                            <div class="finance-panel">
+                                <h4>Monthly Payments (Last 6 Months)</h4>
+                                <canvas id="payments-chart" width="620" height="220"></canvas>
+                            </div>
+                            <div class="finance-panel">
+                                <h4>Payment Totals</h4>
+                                <p class="finance-metric">Completed: <strong id="completed-payments-total">KSh 0</strong></p>
+                                <p class="finance-metric">Pending: <strong id="pending-payments-total">KSh 0</strong></p>
+                                <p class="finance-metric">Failed: <strong id="failed-payments-total">KSh 0</strong></p>
+                                <p class="finance-metric">Records: <strong id="payments-records-count">0</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-alerts-section" id="history-card">
+                    <div class="alerts-card">
+                        <div class="alerts-header">
+                            <h3>Payment History</h3>
+                            <span class="alert-count" id="payment-history-count">0</span>
+                        </div>
+                        <div class="history-table-wrap">
+                            <table class="management-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction</th>
+                                        <th>Student</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Method</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payment-history-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-alerts-section" id="reports-card">
+                    <div class="alerts-card">
+                        <div class="alerts-header">
+                            <h3>Reports</h3>
+                            <span class="alert-count">CSV</span>
+                        </div>
+                        <div class="reports-actions">
+                            <button class="alert-action" id="download-students-report">Download Students Report</button>
+                            <button class="alert-action" id="download-teachers-report">Download Teachers Report</button>
+                            <button class="alert-action" id="download-payments-report">Download Payments Report</button>
+                            <button class="alert-action" id="download-summary-report">Download System Summary</button>
+                        </div>
+                        <p class="report-status" id="report-status"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="admin-modal hidden" id="student-modal">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h3>Add Student</h3>
+                <button class="modal-close-btn" data-close-modal="student-modal">x</button>
+            </div>
+            <form id="student-form" class="admin-form-grid">
+                <input type="text" id="student-id" placeholder="Student ID (e.g. STD-2026-001)" required>
+                <input type="text" id="student-name" placeholder="Student Full Name" required>
+                <input type="text" id="student-grade" placeholder="Grade (e.g. Grade 10)" required>
+                <input type="email" id="student-email" placeholder="Student Email" required>
+                <input type="text" id="student-subjects" placeholder="Subjects learning (comma separated)" required>
+                <select id="student-status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+                <button type="submit" class="add-new-btn">Save Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-modal hidden" id="teacher-modal">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h3>Add Teacher</h3>
+                <button class="modal-close-btn" data-close-modal="teacher-modal">x</button>
+            </div>
+            <form id="teacher-form" class="admin-form-grid">
+                <input type="text" id="teacher-id" placeholder="Teacher ID (e.g. TECH-2026-001)" required>
+                <input type="text" id="teacher-name" placeholder="Teacher Full Name" required>
+                <input type="email" id="teacher-email" placeholder="Teacher Email" required>
+                <input type="number" id="teacher-classes" placeholder="Number of Classes" min="1" required>
+                <input type="text" id="teacher-subjects" placeholder="Subjects teaching (comma separated)" required>
+                <button type="submit" class="add-new-btn">Save Teacher</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-modal hidden" id="payment-modal">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h3>Add Payment Record</h3>
+                <button class="modal-close-btn" data-close-modal="payment-modal">x</button>
+            </div>
+            <form id="payment-form" class="admin-form-grid">
+                <input type="text" id="payment-student-id" placeholder="Student ID" required>
+                <input type="text" id="payment-student-name" placeholder="Student Name" required>
+                <input type="number" id="payment-amount" placeholder="Amount" min="0" step="0.01" required>
+                <input type="date" id="payment-date" required>
+                <input type="text" id="payment-method" placeholder="Method (Cash/Bank/Online)" required>
+                <select id="payment-status">
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Failed">Failed</option>
+                </select>
+                <button type="submit" class="add-new-btn">Save Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-modal hidden" id="grade-fee-modal">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h3>Set Grade Fee</h3>
+                <button class="modal-close-btn" data-close-modal="grade-fee-modal">x</button>
+            </div>
+            <form id="grade-fee-form" class="admin-form-grid">
+                <input type="text" id="grade-fee-grade" placeholder="Grade (e.g. Grade 10)" required>
+                <input type="text" id="grade-fee-name" placeholder="Fee Name (e.g. Tuition)" required>
+                <input type="number" id="grade-fee-amount" placeholder="Amount" min="0" step="0.01" required>
+                <input type="date" id="grade-fee-due">
+                <button type="submit" class="add-new-btn">Save Grade Fee</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
+

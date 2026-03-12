@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Teacher Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/teacher-dashboard.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">ED</span>
+                    <h2>EduFlow</h2>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=5" alt="Teacher" class="user-avatar">
+                <div class="user-meta">
+                    <h4 id="teacher-name-label">Teacher</h4>
+                    <p id="teacher-subjects-label">Subjects</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="teacher-dashboard.html" class="nav-link active"><span>TD</span> Teacher Dashboard</a>
+                    <a href="teacher-schedule.html" class="nav-link"><span>SC</span> Schedule</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    
+                    <a href="#eligible-students" class="nav-link"><span>ST</span> My Students</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">Home Page</p>
+                    <p style="counter-reset: 4;">
+                        <a href="teacher-schedule.html" class="nav-link"><span></span> Home</a>
+                    </p>
+                </div>
+            </nav>
+
+            <a href="index.html" class="sign-out"><span></span> Sign Out</a>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">Menu</button>
+                <div class="search-bar">
+                    <span class="search-icon">Search</span>
+                    <input type="text" id="teacher-search" placeholder="Search your students...">
+                </div>
+                <div class="header-actions">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Profile" class="header-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="page-header-teacher">
+                    <div>
+                        <h1>Teacher Dashboard</h1>
+                        <p class="text-muted">Manage marks only for your assigned subjects and classes.</p>
+                    </div>
+                    <button class="new-assignment-btn" id="refresh-teacher-view">Refresh</button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">MY SUBJECTS</p>
+                            <h2 class="stat-value" id="my-subjects-count">0</h2>
+                            <p class="stat-sub positive">Assigned subjects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">MY CLASSES</p>
+                            <h2 class="stat-value" id="my-classes-count">0</h2>
+                            <p class="stat-sub positive">Classes currently taught</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">ELIGIBLE STUDENTS</p>
+                            <h2 class="stat-value" id="my-students-count">0</h2>
+                            <p class="stat-sub positive">Filtered by assignment</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <p class="stat-label">MARKS RECORDED</p>
+                            <h2 class="stat-value" id="marks-recorded-count">0</h2>
+                            <p class="stat-sub warning">Your saved marks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="classes-filter">
+                    <button class="class-filter-btn active" data-class="all">All Classes</button>
+                    <p class="filter-info" id="filter-info">Showing all your classes</p>
+                </div>
+
+                <div class="marks-workspace" id="marks-workspace">
+                    <div class="marks-form-card">
+                        <div class="widget-header">
+                            <h3>Marks & Grades Workspace</h3>
+                            <span class="badge-alert" id="teacher-subject-badge">Subjects: 0</span>
+                        </div>
+                        <p class="text-muted">You can only select students enrolled in your subject and class.</p>
+                        <form id="teacher-marks-form" class="marks-form-grid">
+                            <select id="marks-class" required></select>
+                            <select id="marks-subject" required></select>
+                            <select id="marks-student" required></select>
+                            <input id="marks-term" type="text" placeholder="Term (e.g. Term 1)" required>
+                            <input id="marks-score" type="number" min="0" max="100" placeholder="Score (0 - 100)" required>
+                            <button type="submit" class="new-assignment-btn">Save Mark</button>
+                        </form>
+                        <p class="marks-message" id="marks-message"></p>
+                    </div>
+
+                    <div class="eligible-students-card" id="eligible-students">
+                        <div class="widget-header">
+                            <h3>Eligible Students</h3>
+                            <span class="badge-alert" id="eligible-count">0</span>
+                        </div>
+                        <p class="text-muted">Only students registered to selected class and subject.</p>
+                        <div class="eligible-students-list" id="eligible-students-list"></div>
+                    </div>
+                </div>
+
+                <div class="marks-history-card">
+                    <div class="widget-header">
+                        <h3>Recorded Marks</h3>
+                        <a href="#" class="text-link" id="export-marks-link">Export CSV</a>
+                    </div>
+                    <table class="teacher-marks-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Student</th>
+                                <th>Term</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacher-marks-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/teacher-dashboard.js"></script>
+</body>
+</html>

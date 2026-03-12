@@ -1,39 +1,53 @@
-/* css/global.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Brand Colors */
-    --primary-purple: #5A32FA;
-    --primary-light: #7B5CFA;
-    --primary-dark: #1E1B4B;
-    --accent-purple: #8B5CF6;
-    
-    /* Backgrounds */
-    --bg-main: #F8FAFC;
-    --bg-white: #FFFFFF;
-    --bg-dark-panel: #1A1C29; /* Left side of login */
-    
-    /* Text Colors */
-    --text-main: #0F172A;
-    --text-muted: #64748B;
-    --text-light: #F8FAFC;
-    
-    /* UI Elements */
-    --border-color: #E2E8F0;
+    --primary: #2563eb;
+    --primary-strong: #1d4ed8;
+    --primary-soft: #dbeafe;
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    --surface-bg: #f3f6fb;
+    --surface-0: #ffffff;
+    --surface-1: #f8fafc;
+    --surface-dark: #0f172a;
+    --surface-dark-soft: #172032;
+
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-inverse: #f8fafc;
+    --border-color: #dbe3ef;
+
     --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 24px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 8px 22px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.12);
+
+    /* Backward compatibility tokens used across existing CSS files */
+    --primary-purple: var(--primary);
+    --primary-light: #3b82f6;
+    --primary-dark: var(--primary-strong);
+    --accent-purple: #60a5fa;
+    --bg-main: var(--surface-bg);
+    --bg-white: var(--surface-0);
+    --bg-dark-panel: var(--surface-dark);
+    --text-light: var(--text-inverse);
+    --text-primary: var(--text-main);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
+    background: radial-gradient(circle at 15% 10%, #eef4ff 0%, #f3f6fb 40%, #f8fbff 100%);
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }

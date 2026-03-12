@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,69 +13,89 @@
         <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="logo"><span class="logo-icon">📖</span><h2>EduFlow</h2></div>
+                <div class="logo"><span class="logo-icon">ED</span><h2>EduFlow</h2></div>
             </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Student" class="user-avatar">
+                <div class="user-meta">
+                    <h4 id="student-sidebar-name">Student Name</h4>
+                    <p id="student-sidebar-class">Class</p>
+                </div>
+            </div>
+
             <nav class="nav-menu">
                 <div class="nav-group">
                     <p class="group-title">OVERVIEW</p>
-                    <a href="dashboard.html" class="nav-link"><span>🏠</span> Dashboard</a>
+                    <a href="dashboard.html" class="nav-link"><span>DB</span> Dashboard</a>
                 </div>
                 <div class="nav-group">
                     <p class="group-title">ACADEMICS</p>
-                    <a href="grades.html" class="nav-link"><span>🎓</span> Marks & Grades</a>
-                    <a href="attendance.html" class="nav-link active"><span>📝</span> Attendance</a>
-                    <a href="schedule.html" class="nav-link"><span>📅</span> Schedule</a>
+                    <a href="grades.html" class="nav-link"><span>MG</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link active"><span>AT</span> Attendance</a>
+                    <a href="schedule.html" class="nav-link"><span>SC</span> Schedule</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="fees.html" class="nav-link"><span>FN</span> Fees & Payments</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">MANAGEMENT</p>
+                    <a href="profile.html" class="nav-link"><span>PF</span> Profile</a>
+                    <a href="settings.html" class="nav-link"><span>ST</span> Settings</a>
                 </div>
             </nav>
+
+            <a href="index.html" class="sign-out"><span>OUT</span> Sign Out</a>
         </aside>
 
         <main class="main-wrapper">
             <header class="top-header">
-                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open menu">Menu</button>
                 <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Search record...">
+                    <span class="search-icon">Search</span>
+                    <input type="text" placeholder="Search attendance...">
                 </div>
             </header>
 
             <section class="content-area">
                 <div class="page-header">
                     <h1>Attendance</h1>
-                    <p class="text-muted">Academic Year 2025/2026 — Full attendance record</p>
+                    <p class="text-muted">Live attendance records from backend</p>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">OVERALL RATE</p>
-                            <h2 class="stat-value">89%</h2>
-                            <p class="stat-sub purple">118 days present</p>
+                            <h2 class="stat-value" id="attendance-rate">0%</h2>
+                            <p class="stat-sub purple" id="attendance-present-meta">0 days present</p>
                         </div>
-                        <div class="stat-icon purple">📈</div>
+                        <div class="stat-icon purple">RT</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">DAYS PRESENT</p>
-                            <h2 class="stat-value">118</h2>
+                            <h2 class="stat-value" id="attendance-present">0</h2>
                             <p class="stat-sub positive">This academic year</p>
                         </div>
-                        <div class="stat-icon green">✅</div>
+                        <div class="stat-icon green">PR</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">DAYS ABSENT</p>
-                            <h2 class="stat-value">10</h2>
+                            <h2 class="stat-value" id="attendance-absent">0</h2>
                             <p class="stat-sub text-muted">Unauthorized absences</p>
                         </div>
-                        <div class="stat-icon-outline">❌</div>
+                        <div class="stat-icon-outline">AB</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">LATE ARRIVALS</p>
-                            <h2 class="stat-value">5</h2>
+                            <h2 class="stat-value" id="attendance-late">0</h2>
                             <p class="stat-sub warning">Marked as late</p>
                         </div>
-                        <div class="stat-icon orange">🕒</div>
+                        <div class="stat-icon orange">LT</div>
                     </div>
                 </div>
 
@@ -84,24 +104,19 @@
                         <h3>Monthly Attendance</h3>
                         <p class="text-muted">Present, absent and late per month</p>
                     </div>
-                    
+
                     <div class="bar-chart">
                         <div class="chart-y-axis">
-                            <span>24</span><span>18</span><span>12</span><span>6</span><span>0</span>
+                            <span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span>
                         </div>
-                        <div class="chart-bars">
-                            <div class="bar-group"><div class="bar present" style="height: 80%;"></div><div class="bar late" style="height: 10%;"></div><label>Sep</label></div>
-                            <div class="bar-group"><div class="bar present" style="height: 90%;"></div><div class="bar late" style="height: 5%;"></div><label>Oct</label></div>
-                            <div class="bar-group"><div class="bar present" style="height: 75%;"></div><div class="bar absent" style="height: 15%;"></div><label>Nov</label></div>
-                            <div class="bar-group"><div class="bar present" style="height: 60%;"></div><div class="bar late" style="height: 10%;"></div><label>Dec</label></div>
-                            <div class="bar-group"><div class="bar present" style="height: 85%;"></div><div class="bar late" style="height: 10%;"></div><label>Jan</label></div>
-                            <div class="bar-group"><div class="bar present" style="height: 82%;"></div><div class="bar late" style="height: 8%;"></div><label>Feb</label></div>
-                        </div>
+                        <div class="chart-bars" id="attendance-chart-bars"></div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+    <script src="js/api.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/attendance.js"></script>
 </body>
 </html>

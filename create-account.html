@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create EduFlow Account</title>
+    <link rel="stylesheet" href="css/create-account.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="glass-panel">
+            <h1>Create Account</h1>
+            <p class="subtitle">Register to request access to EduFlow</p>
+
+            <div class="demo-notice">
+                <span class="shield-icon">INFO</span>
+                Your registration request will be reviewed by Admin before login is enabled.
+            </div>
+
+            <form id="create-account-form" novalidate>
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <div class="input-wrapper">
+                        <span class="icon">@</span>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registrationNumber">Registration Number</label>
+                    <div class="input-wrapper">
+                        <span class="icon">#</span>
+                        <input type="text" id="registrationNumber" name="registrationNumber" placeholder="e.g EDU/2026/001" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="registrationDate">Registration Date</label>
+                    <div class="input-wrapper">
+                        <span class="icon">D</span>
+                        <input type="date" id="registrationDate" name="registrationDate" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <span class="icon">*</span>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <span class="icon">+</span>
+                        <input type="text" id="password" name="password" placeholder="Auto: registration number" readonly>
+                    </div>
+                </div>
+
+                <div class="role-group">
+                    <label>Select Role</label>
+                    <div class="role-buttons">
+                        <button type="button" class="role-btn active" data-role="student">Student</button>
+                        <button type="button" class="role-btn" data-role="teacher">Teacher</button>
+                        <button type="button" class="role-btn" data-role="admin">Admin</button>
+                    </div>
+                </div>
+
+                <input type="hidden" id="role" name="role" value="student">
+
+                <button type="submit" class="submit-btn">Create Account</button>
+                <p id="form-message" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <p class="signup-link">Already have an account? <a href="index.html">Sign in</a></p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/create-account.js"></script>
+</body>
+</html>

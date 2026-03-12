@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,38 +12,49 @@
         <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="logo"><span class="logo-icon">📖</span><h2>EduFlow</h2></div>
+                <div class="logo"><span class="logo-icon">ED</span><h2>EduFlow</h2></div>
             </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Student" class="user-avatar">
+                <div class="user-meta">
+                    <h4 id="student-sidebar-name">Student Name</h4>
+                    <p id="student-sidebar-class">Class</p>
+                </div>
+            </div>
+
             <nav class="nav-menu">
                 <div class="nav-group">
                     <p class="group-title">OVERVIEW</p>
-                    <a href="dashboard.html" class="nav-link"><span>🏠</span> Dashboard</a>
+                    <a href="dashboard.html" class="nav-link"><span>DB</span> Dashboard</a>
                 </div>
                 <div class="nav-group">
                     <p class="group-title">MANAGEMENT</p>
-                    <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
-                    <a href="settings.html" class="nav-link active"><span>⚙️</span> Settings</a>
+                    <a href="profile.html" class="nav-link"><span>PF</span> Profile</a>
+                    <a href="settings.html" class="nav-link active"><span>ST</span> Settings</a>
                 </div>
             </nav>
-            <a href="index.html" class="sign-out"><span>🚪</span> Sign Out</a>
+
+            <a href="index.html" class="sign-out"><span>OUT</span> Sign Out</a>
         </aside>
 
         <main class="main-wrapper">
             <header class="top-header">
-                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">Menu</button>
                 <div class="search-bar">
-                    <span class="search-icon">🔍</span>
+                    <span class="search-icon">Search</span>
                     <input type="text" placeholder="Search settings...">
                 </div>
             </header>
 
             <section class="content-area">
                 <h1 style="font-size: 26px; margin-bottom: 10px;">Settings</h1>
-                <p style="color: var(--text-muted);">Settings page placeholder (we can flesh this out next).</p>
+                <p class="text-muted">Settings modules can be added next (profile updates, password change, notification preferences).</p>
             </section>
         </main>
     </div>
 
+    <script src="js/api.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

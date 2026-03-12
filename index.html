@@ -1,102 +1,61 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduFlow - Sign In</title>
-    <link rel="stylesheet" href="css/global.css">
+    <title>EduFlow Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="login-container">
-        <div class="login-branding">
-            <div class="brand-header">
-                <div class="logo">
-                    <span class="logo-icon">📖</span>
-                    <h2>EduFlow</h2>
-                </div>
-                <span class="badge">School Management System</span>
+        <div class="glass-panel">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Sign in to your EduFlow account</p>
+
+            <div class="demo-notice">
+                <span class="shield-icon">INFO</span>
+                Log in to continue, or create an account if you are new.
             </div>
 
-            <div class="brand-content">
-                <h1>Empower Every<br><span class="highlight">Student's Journey</span></h1>
-                <p>Access grades, attendance, fees and everything you need — all in one intelligent student portal.</p>
-
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="feature-icon">📊</div>
-                        <div class="feature-text">
-                            <h4>Track Progress</h4>
-                            <p>Monitor grades & performance in real-time</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🛡️</div>
-                        <div class="feature-text">
-                            <h4>Secure Portal</h4>
-                            <p>Your academic data, always protected</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">👥</div>
-                        <div class="feature-text">
-                            <h4>Connected Community</h4>
-                            <p>Stay in sync with teachers & classmates</p>
-                        </div>
+            <form action="dashboard.html" method="GET">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <span class="icon">@</span>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
                 </div>
-            </div>
 
-            <div class="brand-footer">
-                <p>&copy; 2026 EduFlow Systems · All rights reserved</p>
-            </div>
-        </div>
-
-        <div class="login-form-section">
-            <div class="form-wrapper">
-                <h2 class="welcome-text">Welcome back 👋</h2>
-                <p class="subtitle">Sign in to your student dashboard</p>
-
-                <div class="demo-alert">
-                    <span class="icon">🛡️</span> Demo: use any email & password (6+ chars) to sign in
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <span class="icon">*</span>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <span class="icon-right">Show</span>
+                    </div>
                 </div>
 
-                <form action="dashboard.html">
-                    <div class="input-group">
-                        <label for="email">Email Address</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">✉️</span>
-                            <input type="email" id="email" placeholder="student@school.edu" required>
-                        </div>
+                <div class="role-group">
+                    <label>Sign in as</label>
+                    <div class="role-buttons">
+                        <button type="button" class="role-btn active" data-role="student">Student</button>
+                        <button type="button" class="role-btn" data-role="teacher">Teacher</button>
+                        <button type="button" class="role-btn" data-role="admin">Admin</button>
                     </div>
+                </div>
 
-                    <div class="input-group">
-                        <div class="label-row">
-                            <label for="password">Password</label>
-                            <a href="#" class="forgot-link">Forgot password?</a>
-                        </div>
-                        <div class="input-wrapper">
-                            <span class="input-icon">🔒</span>
-                            <input type="password" id="password" value="12345678" required>
-                            <span class="input-icon right">👁️</span>
-                        </div>
-                    </div>
+                <input type="hidden" id="role" name="role" value="student">
 
-                    <div class="input-group">
-                        <label>Sign in as</label>
-                        <div class="role-selector">
-                            <button type="button" class="role-btn active">Student</button>
-                            <button type="button" class="role-btn">Teacher</button>
-                            <button type="button" class="role-btn">Admin</button>
-                        </div>
-                    </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
 
-                    <button type="submit" class="submit-btn">Sign In &rarr;</button>
-                </form>
-
-                <p class="form-footer">Don't have an account? <a href="#">Craete Account</a></p>
-            </div>
+            <p class="signup-link">Don't have an account? <a href="create-account.html">Create Account</a></p>
         </div>
     </div>
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

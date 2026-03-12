@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow - Teacher Schedule</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/teacher-schedule.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">ED</span>
+                    <h2>EduFlow</h2>
+                </div>
+            </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=5" alt="Teacher" class="user-avatar">
+                <div class="user-meta">
+                    <h4>Mrs. S. Johnson</h4>
+                    <p>Mathematics • Physics</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">OVERVIEW</p>
+                    <a href="teacher-dashboard.html" class="nav-link"><span>TD</span> Teacher Dashboard</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">ACADEMICS</p>
+                    <a href="teacher-dashboard.html" class="nav-link"><span>SM</span> Student Management</a>
+                    <a href="teacher-schedule.html" class="nav-link active"><span>SC</span> Schedule</a>
+                </div>
+            </nav>
+
+            <a href="index.html" class="sign-out"><span>OUT</span> Sign Out</a>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="top-header">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu">Menu</button>
+                <div class="search-bar">
+                    <span class="search-icon">Search</span>
+                    <input type="text" placeholder="Search classes, subjects...">
+                </div>
+                <div class="header-actions">
+                    <button class="notif-btn" type="button">N<span class="dot"></span></button>
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Profile" class="header-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="schedule-page-header">
+                    <div>
+                        <h1>My Schedule</h1>
+                        <p class="text-muted">Manage your classes and timetable</p>
+                    </div>
+                    <div class="schedule-header-actions">
+                        <select id="week-selector" class="week-selector">
+                            <option>This Week (Mar 3-7)</option>
+                            <option>Next Week (Mar 10-14)</option>
+                            <option>Previous Week (Feb 24-28)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="week">Week View</button>
+                    <button class="toggle-btn" data-view="day">Day View</button>
+                    <button class="toggle-btn" data-view="list">List View</button>
+                </div>
+
+                <div id="week-view" class="schedule-view active">
+                    <div class="week-grid">
+                        <div class="day-column">
+                            <div class="day-header"><h3>Monday</h3><p class="date">Mar 3</p></div>
+                            <div class="day-classes">
+                                <div class="class-block math"><div class="block-time">08:00</div><div class="block-info"><h4>Grade 10A</h4><p>Mathematics</p><span class="block-room">B-201</span></div></div>
+                                <div class="class-block physics"><div class="block-time">10:45</div><div class="block-info"><h4>Grade 11A</h4><p>Physics Lab</p><span class="block-room">Lab C-102</span></div></div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header"><h3>Tuesday</h3><p class="date">Mar 4</p></div>
+                            <div class="day-classes">
+                                <div class="class-block math"><div class="block-time">08:00</div><div class="block-info"><h4>Grade 11B</h4><p>Mathematics</p><span class="block-room">A-304</span></div></div>
+                                <div class="class-block physics"><div class="block-time">11:00</div><div class="block-info"><h4>Grade 10A</h4><p>Physics</p><span class="block-room">Lab C-102</span></div></div>
+                            </div>
+                        </div>
+                        <div class="day-column today">
+                            <div class="day-header"><h3>Wednesday</h3><p class="date">Mar 5 <span class="today-badge">Today</span></p></div>
+                            <div class="day-classes">
+                                <div class="class-block completed"><div class="block-time">08:00</div><div class="block-info"><h4>Grade 10A</h4><p>Mathematics</p><span class="block-room">B-201</span></div></div>
+                                <div class="class-block ongoing"><div class="block-time">10:45</div><div class="block-info"><h4>Grade 11A</h4><p>Physics Lab</p><span class="block-room">Lab C-102</span></div></div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header"><h3>Thursday</h3><p class="date">Mar 6</p></div>
+                            <div class="day-classes">
+                                <div class="class-block math"><div class="block-time">08:00</div><div class="block-info"><h4>Grade 12S</h4><p>Advanced Math</p><span class="block-room">B-105</span></div></div>
+                                <div class="class-block physics"><div class="block-time">09:15</div><div class="block-info"><h4>Grade 11A</h4><p>Physics</p><span class="block-room">Lab C-102</span></div></div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header"><h3>Friday</h3><p class="date">Mar 7</p></div>
+                            <div class="day-classes">
+                                <div class="class-block math"><div class="block-time">08:00</div><div class="block-info"><h4>Grade 10B</h4><p>Mathematics</p><span class="block-room">B-205</span></div></div>
+                                <div class="class-block physics"><div class="block-time">09:15</div><div class="block-info"><h4>Grade 12S</h4><p>Physics</p><span class="block-room">Lab C-102</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="day-view" class="schedule-view">
+                    <div class="day-view-full">
+                        <div class="day-view-header">
+                            <button class="nav-arrow prev-day">Previous Day</button>
+                            <h2 id="selected-date">Wednesday, March 5, 2026</h2>
+                            <button class="nav-arrow next-day">Next Day</button>
+                        </div>
+
+                        <div class="timeline-container">
+                            <div class="time-column">
+                                <div class="time-slot">08:00</div><div class="time-slot">09:00</div><div class="time-slot">10:00</div><div class="time-slot">11:00</div>
+                                <div class="time-slot">12:00</div><div class="time-slot">13:00</div><div class="time-slot">14:00</div><div class="time-slot">15:00</div>
+                            </div>
+                            <div class="events-column">
+                                <div class="timeline-event completed" style="top:0%;height:16%;"><div class="event-time">08:00</div><div class="event-title">Grade 10A - Mathematics</div><div class="event-room">B-201 • 32 students</div></div>
+                                <div class="timeline-event ongoing" style="top:42%;height:18%;"><div class="event-time">10:45</div><div class="event-title">Grade 11A - Physics Lab</div><div class="event-room">Lab C-102 • 28 students</div></div>
+                                <div class="timeline-event" style="top:62%;height:16%;"><div class="event-time">12:00</div><div class="event-title">Grade 11B - Physics</div><div class="event-room">A-304 • 29 students</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="list-view" class="schedule-view">
+                    <div class="schedule-list-container">
+                        <div class="schedule-list-item today-section">
+                            <h3>Today - Wednesday, March 5</h3>
+                            <div class="list-items">
+                                <div class="list-item completed"><div class="list-time">08:00 - 09:00</div><div class="list-content"><h4>Grade 10A - Mathematics</h4><p>Room B-201 • 32 students</p></div><div class="list-status">Completed</div></div>
+                                <div class="list-item ongoing"><div class="list-time">10:45 - 12:00</div><div class="list-content"><h4>Grade 11A - Physics Lab</h4><p>Lab C-102 • 28 students</p></div><div class="list-status">Ongoing</div></div>
+                                <div class="list-item upcoming"><div class="list-time">12:00 - 13:00</div><div class="list-content"><h4>Grade 11B - Physics</h4><p>Room A-304 • 29 students</p></div><div class="list-status">Upcoming</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-summary">
+                    <div class="summary-card"><h4>Classes This Week</h4><p class="summary-value">24</p></div>
+                    <div class="summary-card"><h4>Total Students</h4><p class="summary-value">142</p></div>
+                    <div class="summary-card"><h4>Lab Sessions</h4><p class="summary-value">6</p></div>
+                    <div class="summary-card"><h4>Completed Today</h4><p class="summary-value">2</p></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/teacher-schedule.js"></script>
+</body>
+</html>

@@ -179,6 +179,82 @@
     padding: 0;
 }
 
+.payment-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.payment-modal.hidden { display: none; }
+
+.payment-modal-card {
+    background: #fff;
+    width: min(480px, 90vw);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.payment-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.payment-form {
+    display: grid;
+    gap: 10px;
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+.pay-submit-btn {
+    background: var(--primary-purple);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.payment-status-text {
+    margin-top: 8px;
+    color: #10B981;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+
 .payment-history-item {
     display: flex;
     align-items: center;

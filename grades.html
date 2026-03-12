@@ -13,26 +13,47 @@
         <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="logo"><span class="logo-icon">📖</span><h2>EduFlow</h2></div>
+                <div class="logo"><span class="logo-icon">ED</span><h2>EduFlow</h2></div>
             </div>
+
+            <div class="user-card">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Student" class="user-avatar">
+                <div class="user-meta">
+                    <h4 id="student-sidebar-name">Student Name</h4>
+                    <p id="student-sidebar-class">Class</p>
+                </div>
+            </div>
+
             <nav class="nav-menu">
                 <div class="nav-group">
                     <p class="group-title">OVERVIEW</p>
-                    <a href="dashboard.html" class="nav-link"><span>🏠</span> Dashboard</a>
+                    <a href="dashboard.html" class="nav-link"><span>DB</span> Dashboard</a>
                 </div>
                 <div class="nav-group">
                     <p class="group-title">ACADEMICS</p>
-                    <a href="grades.html" class="nav-link active"><span>🎓</span> Marks & Grades</a>
-                    <a href="attendance.html" class="nav-link"><span>📝</span> Attendance</a>
+                    <a href="grades.html" class="nav-link active"><span>MG</span> Marks & Grades</a>
+                    <a href="attendance.html" class="nav-link"><span>AT</span> Attendance</a>
+                    <a href="schedule.html" class="nav-link"><span>SC</span> Schedule</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">FINANCE</p>
+                    <a href="fees.html" class="nav-link"><span>FN</span> Fees & Payments</a>
+                </div>
+                <div class="nav-group">
+                    <p class="group-title">MANAGEMENT</p>
+                    <a href="profile.html" class="nav-link"><span>PF</span> Profile</a>
+                    <a href="settings.html" class="nav-link"><span>ST</span> Settings</a>
                 </div>
             </nav>
+
+            <a href="index.html" class="sign-out"><span>OUT</span> Sign Out</a>
         </aside>
 
         <main class="main-wrapper">
             <header class="top-header">
-                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open menu">Menu</button>
                 <div class="search-bar">
-                    <span class="search-icon">🔍</span>
+                    <span class="search-icon">Search</span>
                     <input type="text" placeholder="Search subjects...">
                 </div>
             </header>
@@ -44,10 +65,7 @@
                         <p>Detailed academic performance report</p>
                     </div>
                     <div class="term-switcher">
-                        <button class="term-btn">Term 1</button>
-                        <button class="term-btn">Term 2</button>
-                        <button class="term-btn">Term 3</button>
-                        <button class="term-btn active">Term 4</button>
+                        <button class="term-btn active" type="button">Current</button>
                     </div>
                 </div>
 
@@ -55,35 +73,35 @@
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">CLASS AVERAGE</p>
-                            <h2 class="stat-value">89/100</h2>
+                            <h2 class="stat-value" id="grades-average">0/100</h2>
                         </div>
-                        <div class="stat-icon purple">📈</div>
+                        <div class="stat-icon purple">AV</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">HIGHEST SCORE</p>
-                            <h2 class="stat-value">97/100</h2>
+                            <h2 class="stat-value" id="grades-highest">0/100</h2>
                         </div>
-                        <div class="stat-icon green">🏆</div>
+                        <div class="stat-icon green">HI</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">LOWEST SCORE</p>
-                            <h2 class="stat-value">79/100</h2>
+                            <h2 class="stat-value" id="grades-lowest">0/100</h2>
                         </div>
-                        <div class="stat-icon orange">📖</div>
+                        <div class="stat-icon orange">LO</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-info">
                             <p class="stat-label">SUBJECTS</p>
-                            <h2 class="stat-value">6</h2>
+                            <h2 class="stat-value" id="grades-subject-count">0</h2>
                         </div>
-                        <div class="stat-icon pink">🎓</div>
+                        <div class="stat-icon pink">SB</div>
                     </div>
                 </div>
 
                 <div class="results-container">
-                    <h3>Term 4 Results</h3>
+                    <h3 id="grades-term-title">Current Term Results</h3>
                     <table class="grades-table">
                         <thead>
                             <tr>
@@ -94,47 +112,14 @@
                                 <th>PROGRESS</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Mathematics</strong></td>
-                                <td class="text-muted">Mr. Johnson</td>
-                                <td><span class="score-pill blue">92</span></td>
-                                <td><span class="grade-badge purple">A</span></td>
-                                <td>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-fill" style="width: 92%;"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Physics</strong></td>
-                                <td class="text-muted">Dr. Williams</td>
-                                <td><span class="score-pill blue">88</span></td>
-                                <td><span class="grade-badge purple">A</span></td>
-                                <td>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-fill" style="width: 88%;"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>English</strong></td>
-                                <td class="text-muted">Ms. Carter</td>
-                                <td><span class="score-pill blue">94</span></td>
-                                <td><span class="grade-badge purple">A</span></td>
-                                <td>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-fill" style="width: 94%;"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="grades-table-body"></tbody>
                     </table>
                 </div>
             </section>
         </main>
     </div>
-    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <script src="js/api.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/grades.js"></script>
 </body>
 </html>
